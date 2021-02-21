@@ -10,9 +10,8 @@
     };
 
     $: {
-        if (value) {
-            textAreaInputhandler();
-        }
+        value
+        textAreaInputhandler();
     }
 </script>
 
@@ -22,6 +21,6 @@
     textarea {
         resize: none;
         width: 100%;
-        resize: vertical;
+        overflow: hidden
     }
 </style>
