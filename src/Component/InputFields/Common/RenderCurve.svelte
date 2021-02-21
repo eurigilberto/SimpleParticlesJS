@@ -99,6 +99,11 @@
             generateCurveValues();
         }
     }
+    $:{
+        if(showCurve){
+            generateCurveValues();
+        }
+    }
 </script>
 
 <svelte:window on:scroll={()=>{if(showCurve){generateCurveValues()}}}/>
