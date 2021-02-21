@@ -20,8 +20,11 @@
     let mouseUp = () => {
         pointMoving = false;
     };
-    let mouseDown = () => {
+    let mouseDown = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
         pointMoving = true;
+        
     };
 
     $: {
