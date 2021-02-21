@@ -11,9 +11,7 @@
 
     $: {
         if (value) {
-            requestAnimationFrame(() => {
-                textAreaInputhandler();
-            });
+            textAreaInputhandler();
         }
     }
 </script>
