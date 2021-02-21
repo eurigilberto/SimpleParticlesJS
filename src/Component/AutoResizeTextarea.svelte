@@ -1,26 +1,28 @@
 <script>
+    import { afterUpdate } from "svelte";
     export let value = "";
 
     let textAreaRef;
     const textAreaInputhandler = () => {
         console.log("called");
         if (!textAreaRef) return;
-        textAreaRef.style.height = "0px";
-        textAreaRef.style.height = `${textAreaRef.scrollHeight}px`;
+        const newHeight = (value.split("\n").length + 1) * 20;
+        textAreaRef.style.height = `${newHeight}px`;
     };
 
-    $: {
-        value
+    afterUpdate(() => {
         textAreaInputhandler();
-    }
+    });
 </script>
 
-<textarea bind:value bind:this={textAreaRef} />
+<textarea wrap="off" bind:value bind:this={textAreaRef} />
 
 <style>
     textarea {
         resize: none;
         width: 100%;
-        overflow: hidden
+        overflow-y: hidden;
+        overflow-x: auto;
+        line-height: 20px;
     }
 </style>
