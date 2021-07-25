@@ -159,7 +159,7 @@
             Particle Count: <input bind:value={particleCount} type="number" />
         </div>
         <div>
-            Max Particle Delay (ms): <input
+            Last Particle Delay: <input
                 bind:value={maxParticleDelay}
                 type="number"
             />
